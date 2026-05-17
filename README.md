@@ -1,4 +1,4 @@
- # To-Do-list-with-local-storage
+ # To-Do-list
 ----------------------------------------------------------------
 ## Description :
 
