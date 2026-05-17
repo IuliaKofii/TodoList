@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class=" container main">
+        <h1>TO DO</h1>
+        <p>what are your plans for today?</p>
+        <form action="to-do" class="form-todo">
+            <div class="textbox">
+                <input type="text" id="new-todo" placeholder="Where shall we start?">
+                <button type="submit" id="task-btn">ADD</button>
+            </div>
+        </form>
+        <div class="row">
+            <ul id="listing">
+
+            </ul>
+        </div>
+        <div class="options">
+            <span class="todo-count">0 items left</span>
+            <ul class="filters">
+                <li><button id="all-active">All</button></li>
+                <li><button id="active">Active</button></li>
+                <li><button id="completed">Completed</button></li>
+            </ul>
+        </div>
+    </div>
+    <script src="javascript.js">
+
+    </script>
+</body>
+
+</html>
