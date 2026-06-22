@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class=" container main">
+<body> 
+
+<div class=" container main">
         <h1>TO DO</h1>
         <p>what are your plans for today?</p>
         <form action="to-do" class="form-todo">
@@ -21,19 +22,18 @@
         </form>
         <div class="row">
             <ul id="listing">
-
             </ul>
         </div>
         <div class="options">
             <span class="todo-count">0 items left</span>
             <ul class="filters">
-                <li><button id="all-active">All</button></li>
-                <li><button id="active">Active</button></li>
-                <li><button id="completed">Completed</button></li>
+                <li><button id="all-todos">All</button></li>
+                <li><button id="active-todos">Active</button></li>
+                <li><button id="completed-todos">Completed</button></li>
             </ul>
         </div>
     </div>
-    <script src="javascript.js">
+    <script src="javascript.js" type="module" defer>
 
     </script>
 </body>

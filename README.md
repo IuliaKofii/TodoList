@@ -9,10 +9,10 @@
 
 ## How does it work?
 
-** The user inputs the tasks that they want to complete for the day and the program lists them so the user can keep track of them, the completed ones or the ones that must be completed.
+** The user inputs the tasks that they want to complete for the day and the program lists them so the user can keep track of them, the completed ones or the ones that must be completed.**
 
 
-No worries about refreshing the page your tasks will still be there, waithing for you to complete them :D **
+**No worries about refreshing the page your tasks will still be there, waithing for you to complete them :D **
 
 ## What is it useful for?
 

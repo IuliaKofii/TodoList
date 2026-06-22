@@ -1,35 +1,41 @@
-let listContainer = document.getElementById('listing');
-let taskInput = document.getElementById('new-todo');
-let todoForm = document.querySelector('.form-todo'); 
-let optionBar = document.querySelector('.options');
-let countDisplay = document.querySelector('.todo-count');
+import { save, load } from './api.js';
 
-let todosArray = []; 
+let listContainer = document.getElementById('listing'),
+    taskInput = document.getElementById('new-todo'),
+    todoForm = document.getElementsByClassName('form-todo')[0],
+    optionBar = document.getElementsByClassName('options')[0],
+    countDisplay = document.getElementsByClassName('todo-count')[0],
+    allTodo = document.getElementById('all-todos'),
+    activeTodo = document.getElementById('active-todos'),
+    completedTodo = document.getElementById('completed-todos');
+
+
+let todosArray = load(); 
 let currentFilter = 'all';
 
-document.getElementById('all-active').addEventListener('click', function() {
+allTodo.addEventListener('click', function() {
     setFilter('all');
 });
-document.getElementById('active').addEventListener('click', function() {
+activeTodo.addEventListener('click', function() {
     setFilter('active');
 });
-document.getElementById('completed').addEventListener('click', function() {
+completedTodo.addEventListener('click', function() {
     setFilter('completed');
 });
 
 function setFilter(filter) {
     currentFilter = filter;
     
-    document.getElementById('all-active').classList.remove('active');
-    document.getElementById('active').classList.remove('active');
-    document.getElementById('completed').classList.remove('active');
+    allTodo.classList.remove('active');
+    activeTodo.classList.remove('active');
+    completedTodo.classList.remove('active');
 
     if (filter === 'all') {
-        document.getElementById('all-active').classList.add('active');
+       allTodo.classList.add('active');
     } else if (filter === 'active') {
-        document.getElementById('active').classList.add('active');
+       activeTodo.classList.add('active');
     } else if (filter === 'completed') {
-        document.getElementById('completed').classList.add('active');
+       completedTodo.classList.add('active');
     }
     
     render();
@@ -48,6 +54,8 @@ todoForm.addEventListener('submit', function(event) {
         text: textValue,
         completed: false
     });
+
+    save(todosArray);
 
     taskInput.value = '';
     render();
@@ -91,7 +99,6 @@ function render() {
         }
 
         li.innerHTML = checkboxHtml + '<span>' + todo.text + '</span><button class="del-btn">✕</button>';
-        
         let checkbox = li.querySelector('.toggle');
         checkbox.addEventListener('change', function() {
             if (checkbox.checked === true) {
@@ -114,10 +121,10 @@ function render() {
                     }
                 }
                 todosArray = newArray;
+                save(todosArray);
                 render(); 
             }, 500);
         });
-
         listContainer.appendChild(li);
     }
 
@@ -128,4 +135,4 @@ function render() {
     }
 }
 
-localStorage.setItem('', '');
+render();
